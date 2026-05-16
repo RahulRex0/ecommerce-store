@@ -1,0 +1,23 @@
+.heading{
+  font-size: 40px;
+  font-weight: bold;
+  display: flex;
+  margin-left: 50px;
+  margin-top: 50px;
+}
+.catalog{
+  margin-left: 50px;
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.image{
+  object-fit:"cover";
+  width: 90%;
+  height: 250px; 
+  border-radius: 12px;
+}
+.title {
+  font-size: 32px;
+  margin-bottom: 24px;
+}
