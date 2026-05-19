@@ -30,6 +30,9 @@ export default function ProductPage(){
                             <div>
                                 {products.description}
                             </div>
+                            <div className={styles.price}>
+                                ₹{products.price}
+                            </div>
                         </div>
 
                     </Link>
