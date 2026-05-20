@@ -14,3 +14,20 @@
     font-size: 24px;
     font-weight: bold;
   }
+
+  .quantityControls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 8px 0;
+  }
+  
+  .quantityControls button {
+    padding: 4px 10px;
+    cursor: pointer;
+  }
+  
+  .quantityControls span {
+    min-width: 20px;
+    text-align: center;
+  }
