@@ -1,3 +1,10 @@
+import CartItems from "@/components/CartItems";
+
 export default function CartPage() {
-    return <h1>Cart page</h1>;
-  }
+  return (
+    <main>
+      <h1>Cart</h1>
+      <CartItems />
+    </main>
+  );
+}

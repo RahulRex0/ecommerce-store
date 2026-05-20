@@ -1,6 +1,8 @@
 import products from "@/data/products.json"
 import { notFound } from "next/navigation"
 import styles from "./page.module.css"
+import AddToCartButton from "@/components/AddToCartButton";
+import Link from "next/link";
 
 type Props = {
   params: Promise<{
@@ -32,7 +34,10 @@ export default async function ProductDetailPage({ params }: Props) {
           <div>
             Stock:{product.stock}
           </div>
-          <button className={styles.button}>Add to Cart</button>
+          <AddToCartButton product={product} />
+          <div>
+            <Link href="/cart"><button>Cart</button></Link>
+          </div>
       </div>
         
     )
