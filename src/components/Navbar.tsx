@@ -9,9 +9,9 @@ export default function Navbar(){
     const { cartCount } = useCart();
     return(
         <nav className={styles.container}>
-            <Link href="/">Home</Link>
-            <Link href="/products">Products</Link>
-            <Link href="/cart"className={styles.containerright}>Cart ({cartCount})</Link>
+            <Link href="/" style={{marginLeft: "220px"}} className={styles.containerleft}>Home</Link>
+            <Link href="/products" className={styles.containerleft}>Products</Link>
+            <Link href="/cart" className={styles.containerright}>Cart ({cartCount})</Link>
         </nav>
     )
 }

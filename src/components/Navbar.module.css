@@ -1,27 +1,33 @@
 .container {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 26px;
   padding: 22px 40px;
-  background: linear-gradient(135deg, #111827, #2563eb);
+  
   box-shadow: 0 10px 30px rgba(17, 24, 39, 0.18);
 }
 
 .containerright {
-  margin-left: auto;
+  margin-left: 880px;
+  padding: 0.5rem 1rem;
+  background-color: rgb(230, 248, 253);
+  color:  darkgreen;
+  border-radius: 5px;
+  border: 1px solid green;
+}
+.containerleft{
+
 }
 
 .container a {
   padding: 10px 14px;
   border-radius: 8px;
-  text-decoration: none;
-  color: #f8fafc;
   font-weight: bold;
   transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
 .container a:hover {
-  background-color: rgba(255, 255, 255, 0.16);
-  color: #ffffff;
+  background-color: #f7f4ee;
+  
   transform: translateY(-1px);
 }
