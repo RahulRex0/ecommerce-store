@@ -1,22 +1,135 @@
-.container {
-  padding: 40px;
+.container{
+  display: grid;
+  margin-left: 275px;
+  grid-template-columns: 1fr 1fr; 
+  gap: 60px;
+  max-width: 1200px; 
+  margin: 80px auto;
+  padding: 0 20px;
+  align-items: center;
 }
-
-.container h1 {
-  font-size: 36px;
-  margin-bottom: 12px;
-}
-
-.container p {
-  font-size: 18px;
-  margin-bottom: 24px;
-}
-
-.button {
+.Fresh{
+  font-weight: bold;
+  font-size: 16px;
+  display: block;
+  padding: 0.85rem 1rem;
+  background-color: rgb(230, 248, 253);
+  color:  rgb(109, 108, 108);
+  border-radius: 50px;
+  border: 1px solid rgb(212, 225, 212);
   display: inline-block;
-  padding: 12px 18px;
-  background-color: black;
-  color: white;
+  width: fit-content;
+}
+.productGrid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+  height: 550px;
+}
+
+.featuredProduct {
+  grid-row: span 2; 
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
+  display: flex;             
+  flex-direction: column;
+  color: inherit;
   text-decoration: none;
+}
+.productCard {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  display: flex;             
+  flex-direction: column;
+  color: inherit;
+  text-decoration: none;
+}
+.productGrid a:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.productImage {
+  width: 100%;
+  flex-grow: 1;
+  object-fit: cover;
+}
+
+.productName {
+  padding: 1rem;
+  font-weight: bold;
+}
+.main{
+  background-color: #f7f4ee;
+}
+
+.leftContent {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; 
+  max-width: 500px;
+}
+.textHeading{
+  font-weight: bold;
+  font-size: 65px;
+}
+.text{
+  color: #59625c;
+  font-size: 18px;
+}
+.buttonGroup {
+  display: flex;
+  flex-direction: row; 
+  gap: 15px; 
+  font-size: 18px;
+  width: fit-content;
+}
+.buttonGroup a{
+  padding: .75rem 1rem;
   border-radius: 8px;
+  font-weight: bold;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.buttonGroup a:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.bottom{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  max-width: 1200px;
+  margin: 1px auto 80px auto; 
+  padding: 0 20px;
+  gap: 30px;
+}
+.bottomCard {
+  background-color: white;
+  border-radius: 8px;
+  padding: 2rem;
+  border: 1px solid #eaeaea;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+}
+.bottomCardTitle {
+  font-weight: bold;
+  font-size: 23px;
+  color:  #b05f32;
+  margin-bottom: 12px;
+
+}
+.bottomCardText {
+  color: #59625c;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 1.5;
 }
