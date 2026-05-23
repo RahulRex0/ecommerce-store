@@ -6,9 +6,18 @@ import Link from "next/link"
 
 export default function ProductPage(){
     return(
-        <main>
+        <main className={styles.main}>
+        
             <div className={styles.heading}>
-                Products
+                <div className={styles.shop}>
+                    Shop the collection
+                </div>
+                <div className={styles.product}>
+                    Products
+                </div>
+                <div className={styles.text}>
+                    Pick from a compact catalog of daily essentials.
+                </div>
             </div>
             <div className={styles.catalog}>
                 {products.map((products)=>(

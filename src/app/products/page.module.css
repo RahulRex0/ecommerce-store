@@ -1,10 +1,33 @@
 .heading{
-  font-size: 40px;
-  font-weight: bold;
-  display: flex;
   margin-left: 50px;
   margin-top: 50px;
 }
+
+.product{
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.shop{
+  font-weight: bold;
+  font-size: 16px;
+  display: block;
+  padding: 0.45rem .75rem;
+  background-color: lightgoldenrodyellow;
+  color: rgb(128, 74, 74);
+  border-radius: 50px;
+  border: 1px solid rgb(235, 235, 235);
+  display: inline-block;
+  width: fit-content;
+  margin-bottom: 19px;
+}
+
+.text{
+  margin-top: 25px;
+  color: #59625c;
+  font-size: 18px;
+}
+
 .catalog{
   margin-left: 50px;
   margin-top: 40px;
@@ -29,8 +52,18 @@
   padding: 20px 12px 20px 45px; 
   border: 1px solid #ddd;
   border-radius: 10px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+.card:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 .price{
   font-weight: bold;
   margin-top: 12px;
+}
+.main{
+  background-color: #f7f4ee;
+  min-height: 93vh;
 }
