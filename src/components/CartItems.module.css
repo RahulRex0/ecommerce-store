@@ -1,33 +1,166 @@
 .container {
-    display: grid;
-    gap: 16px;
-  }
-  
+  display: grid;
+  gap: 19px;
+}
+
+.item {
+  min-height: 108px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto auto;
+  align-items: center;
+  gap: 22px;
+  padding: 22px;
+  border: 1px solid #deded8;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.details h2 {
+  margin: 0 0 8px;
+  font-size: 26px;
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+.details p {
+  margin: 0;
+  color: #5f6a61;
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.quantityControls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px;
+  border: 1px solid #dbe5df;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.quantityControls button {
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 6px;
+  background: #17675e;
+  color: #fff;
+  font-size: 22px;
+  line-height: 1;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.quantityControls span {
+  min-width: 22px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.subtotal {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.removeButton {
+  min-height: 50px;
+  padding: 0 18px;
+  border: 1px solid #efc6b9;
+  border-radius: 8px;
+  background: #fff7f3;
+  color: #9d3427;
+  font-size: 19px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.summary {
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 8px;
+  padding: 24px;
+  border: 1px solid #deded8;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.total {
+  margin: 0;
+  font-size: 34px;
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+.clearButton {
+  min-height: 50px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 8px;
+  background: #17211a;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.removeButton:hover,
+.clearButton:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.empty {
+  padding: 24px;
+  border: 1px solid #deded8;
+  border-radius: 8px;
+  background: #fff;
+  color: #5f6a61;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+@media (max-width: 820px) {
   .item {
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 16px;
-  }
-  
-  .total {
-    margin-top: 24px;
-    font-size: 24px;
-    font-weight: bold;
+    grid-template-columns: 1fr;
+    align-items: stretch;
   }
 
-  .quantityControls {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin: 8px 0;
+  .quantityControls,
+  .subtotal,
+  .removeButton {
+    width: fit-content;
   }
-  
-  .quantityControls button {
-    padding: 4px 10px;
-    cursor: pointer;
+
+  .summary {
+    align-items: flex-start;
+    flex-direction: column;
   }
-  
-  .quantityControls span {
-    min-width: 20px;
-    text-align: center;
+}
+
+@media (max-width: 520px) {
+  .item,
+  .summary {
+    padding: 18px;
   }
+
+  .details h2 {
+    font-size: 23px;
+  }
+
+  .total {
+    font-size: 30px;
+  }
+}
