@@ -1,8 +1,15 @@
 # E-commerce Store
 
-A simple e-commerce learning project built with Next.js, TypeScript, and CSS Modules.
+A e-commerce learning project built with Next.js, TypeScript, and CSS Modules.
 
 This project is focused on learning core frontend concepts such as routing, dynamic product pages, component structure, React state, and cart management
+live demo: https://ecommerce-store-nine-amber.vercel.app/
+
+<p>
+    <img width="48%" alt="Screenshot 2026-05-27 at 5 13 40 PM" src="https://github.com/user-attachments/assets/5c4735db-5d36-4800-8da7-79b35cd355af" />
+    <img width="48%" alt="Screenshot 2026-05-27 at 5 14 15 PM" src="https://github.com/user-attachments/assets/3ad25835-075e-4ac1-be34-c28ad8aaf7fb" />
+    <img width="48%" alt="Screenshot 2026-05-27 at 5 13 50 PM" src="https://github.com/user-attachments/assets/a2e896a8-4093-46ef-9d65-24ff5d469f43" />
+</p>
 
 ## Features
 
@@ -17,10 +24,6 @@ This project is focused on learning core frontend concepts such as routing, dyna
 - Cart total calculation
 - Product data loaded from a local JSON file
 - Responsive layout using CSS Modules
-
-<img width="1710" height="1073" alt="Screenshot 2026-05-23 at 2 26 06 PM" src="https://github.com/user-attachments/assets/c7bd781f-7588-4ea8-b917-99f8e8c36cf2" />
-
-
 
 ## Tech Stack
 
