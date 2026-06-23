@@ -3,6 +3,8 @@
 import {
   createContext,
   useContext,
+  useState,
+  useEffect,
   type ReactNode,
 } from "react";
 
@@ -14,6 +16,12 @@ type Product = {
 
 type CartItem = Product & {
   quantity: number;
+};
+
+type Cart = {
+  items: CartItem[];
+  total: number;
+  count: number;
 };
 
 type CartContextType = {
@@ -29,34 +37,67 @@ type CartContextType = {
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
+const API = process.env.NEXT_PUBLIC_API_URL;
+
 export function CartProvider({ children }: { children: ReactNode }) {
-  const cart: CartItem[] = [];
 
-  function addToCart(product: Product) {}
+  const [cart, setCart] = useState<Cart>({ items: [], total: 0, count: 0 });
 
-  function removeFromCart(id: string) {}
+  useEffect(() => {
+    fetch(`${API}/api/cart`)
+      .then((res) => res.json())
+      .then((data: Cart) => setCart(data))
+      .catch((error) => console.error("Failed to load cart:", error));
+  }, []);
 
-  function increaseQuantity(id: string) {}
+  async function addToCart(product: Product) {
 
-  function decreaseQuantity(id: string) {}
+    const res = await fetch(`${API}/api/cart/items`,{
+      method:"post",
+      headers:{"content-type":"application/json" },
+      body: JSON.stringify({productId: product.id})
+    })
+    setCart(await res.json());
+  }
 
-  function clearCart() {}
+  async function changeQuantity(id: string, delta: number) {
+    const res = await fetch(`${API}/api/cart/items/${id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ delta }),
+    });
+    setCart(await res.json());
+  }
 
-  const total = 0;
+  function increaseQuantity(id: string) {
+    changeQuantity(id, 1);
+  }
 
-  const cartCount = 0;
+  function decreaseQuantity(id: string) {
+    changeQuantity(id, -1);
+  }
+
+  async function removeFromCart(id: string) {
+    const res = await fetch(`${API}/api/cart/items/${id}`, { method: "DELETE" });
+    setCart(await res.json());
+  }
+
+  async function clearCart() {
+    const res = await fetch(`${API}/api/cart`, { method: "DELETE" });
+    setCart(await res.json());
+  }
 
   return (
     <CartContext.Provider
-    value={{
-        cart,
+      value={{
+        cart: cart.items,     
         addToCart,
         removeFromCart,
         increaseQuantity,
         decreaseQuantity,
         clearCart,
-        total,
-        cartCount,
+        total: cart.total,
+        cartCount: cart.count,
       }}
     >
       {children}
@@ -64,12 +105,13 @@ export function CartProvider({ children }: { children: ReactNode }) {
   );
 }
 
+
 export function useCart() {
-  const context = useContext(CartContext);
+  const context = useContext(CartContext)
 
   if (!context) {
-    throw new Error("useCart must be used inside CartProvider");
+    throw new Error("useCart must be used inside CartProvider")
   }
 
-  return context;
+  return context
 }
