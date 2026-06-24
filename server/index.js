@@ -7,7 +7,7 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
-const port=4000;
+const port = process.env.PORT || 4000
 
 const wrap = (fn) => (req,res)=> fn(req,res).catch((err)=>{
     console.error(err)
